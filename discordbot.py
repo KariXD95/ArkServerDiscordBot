@@ -18,17 +18,17 @@ async def on_message(message):
 
     if message.content == "/start":
         await message.channel.send("Server starting up...")
-        os.system("gcloud --acount=ark-botserver-serviceaccount@ark-hdk.iam.gserviceaccount.com compute instances start ark-instance --project ark-HDK --zone us-west1-b")
+        os.system("gcloud --account=ark-botserver-serviceaccount@ark-hdk.iam.gserviceaccount.com compute instances start ark-instance --project ark-hdk --zone us-west1-b")
         await message.channel.send("起動まで20分程掛かるよ。気長に待ってね。")
     
     if message.content == "/stop":
         await message.channel.send("Server is stopping...")
-        os.system("gcloud --acount=ark-botserver-serviceaccount@ark-hdk.iam.gserviceaccount.com compute instances stop ark-instance --project ark-HDK --zone us-west1-b")
+        os.system("gcloud --account=ark-botserver-serviceaccount@ark-hdk.iam.gserviceaccount.com compute instances stop ark-instance --project ark-hdk --zone us-west1-b")
         await message.channel.send("きちんと停止するまで5分程かかるよ。停止前に起動コマンドを打たないでね。")
 
     if message.content == '/help':
-        await message.channel.send('/start : サーバの起動')
-        await message.channel.send('/stop : サーバの停止') 
+        await message.channel.send('/start : サーバーの起動')
+        await message.channel.send('/stop : サーバーの停止') 
 
 
 client.run(TOKEN)
